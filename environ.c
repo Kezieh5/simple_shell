@@ -32,7 +32,8 @@ char *_getenv(const char *name)
 
 /**
  *  _getpath - gets the value of the PATH environment variable
- * @name: name of the environment variable
+ * @path: name of the environment variable
+ * @path_cpy: copy of the path variable
  *
  * Return: pointer to the value of the PATH environment variable
  */
@@ -73,8 +74,9 @@ list_t *_getpath(char *path, char **path_cpy)
 
 /**
  * listpath - Return a linked list of all directories of path
- * @pathCopy: a
- * Return: a
+ * @path_cpy: a
+ *
+ * Return: linked list (list_t)
  */
 list_t *list_path(char **path_cpy)
 {
