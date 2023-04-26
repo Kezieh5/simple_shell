@@ -18,7 +18,7 @@
 extern char **environ;
 
 /**
- * list_t - singly linked list
+ * struct list_s - singly linked list
  * @str: string - (malloc'ed string)
  * @next: points to the next node
  *
@@ -52,7 +52,8 @@ int tokens_len(ssize_t read_len, char **buffer);
 
 /* Executer */
 int _exec(char **buffer, char ***av, char *full_path, int *st);
-void check_path(char ***tokens, char **path, char **av, int *count, int *error);
+void check_path(char ***tokens, char **path, char **av, int *cnt, int *err);
+
 
 /* String tools */
 int _strlen(const char *s);
@@ -93,5 +94,7 @@ void _puts(int fd, char *str);
 /* string-tools-adv */
 char *itoa(int value, char *buffer, int base);
 
-void check_dir(char ***tokens, char **path, char **av, int *count, int *errShowed);
+/*loop*/
+
+void check_dir(char ***tokens, char **path, char **av, int *count, int *error);
 #endif
