@@ -50,7 +50,7 @@ int _exec(char **buffer, char ***av, char *full_path, int *st)
 }
 
 /**
- * check_pacth - checks if the command is in the PATH
+ * check_path - checks if the command is in the PATH
  * @av: arguments passed to the function
  * @path: path of the command
  * @tokens: tokens of the path
@@ -59,7 +59,7 @@ int _exec(char **buffer, char ***av, char *full_path, int *st)
  *
  * Return: void
  */
-void check_path(char ***tokens, char **path, char **av, int *count, int *error)
+void check_path(char ***tokens, char **path, char **av, int *cnt, int *err)
 {
 	char *first = NULL, buffer[33], *msg = NULL;
 
@@ -75,14 +75,14 @@ void check_path(char ***tokens, char **path, char **av, int *count, int *error)
 		if (access(first, F_OK) != 0)
 		{
 			msg = "not found\n";
-			pfError(av[0], itoa(*count, buffer, 10), first, msg);
-			*error = 127;
+			pfError(av[0], itoa(*cnt, buffer, 10), first, msg);
+			*err = 127;
 		}
 		else if (access(first, X_OK) != 0)
 		{
 			msg = "Permission denied\n";
-			pfError(av[0], itoa(*count, buffer, 10), first, msg);
-			*error = 126;
+			pfError(av[0], itoa(*cnt, buffer, 10), first, msg);
+			*err = 126;
 		}
 	}
 }
