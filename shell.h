@@ -10,6 +10,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
+#include <ctype.h>
 
 #define TRUE 1
 #define FALSE 0
@@ -31,6 +32,13 @@ typedef struct list_s
 
 /* Main function */
 int loop(char **argv);
+
+/*memory*/
+int bfree(void **ptr);
+
+/*Delim.c*/
+char **strtow(char *str, char *delim);
+char **strtow3(char *str, char d);
 
 /* Builtin functions */
 void shell_exit(char ***av, int ac, ssize_t *read);
